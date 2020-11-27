@@ -27,16 +27,11 @@ function diagonalDifferenceSecondMethod(arr) {
     
     var leftSum=0;
     var rightSum=0;
-
-    //Find left Diagonal
-    for (var i=0; i<dim; i++){
-        leftSum+=arr[i][i]
-    }
-
     var end =arr.length-1;
-    //find right diagonal
-    for(let i=0; i<dim; i++){
-        rightSum+=arr[i][end-i]
+    //Find left and Right Diagonal
+    for (var i=0; i<dim; i++){
+        leftSum+=arr[i][i];
+        rightSum+=arr[i][end-i];
     }
 
     return Math.abs(leftSum-rightSum);

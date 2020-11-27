@@ -2,6 +2,8 @@ const arr=[1, 2 ,3, 4 ,5]
 // Complete the miniMaxSum function below.
 function miniMaxSum(arr) {
 
+    arr=arr.sort();
+
     const arr_sum=[];
     let  max_sum=0;
     let min_sum=0;
@@ -32,4 +34,22 @@ function miniMaxSum(arr) {
  
 }
 
-miniMaxSum(arr);
+function miniMaxSumSecondMethod(arr) {
+
+    arr=arr.sort();
+    
+    let min=0, max=0;
+    arr.forEach((num, i) => {
+        if(i==0) min+=num
+        else if(i==arr.length-1) max+=num
+        else{
+            min+=num;
+            max+=num;
+        }
+    });
+    
+    console.log(min, max);
+ 
+}
+
+miniMaxSumSecondMethod(arr);
